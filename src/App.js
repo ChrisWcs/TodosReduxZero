@@ -3,10 +3,14 @@ import { Provider } from "redux-zero/react";
 import store from './store/store';
 
 import ConList from './containers/ConList';
+import ConInput from './containers/ConInput';
 
 const App = () => (
     <Provider store={store}>
-        <ConList/>
+        <div>
+            <ConInput/>
+            <ConList/>
+        </div>
     </Provider>
 );
 
