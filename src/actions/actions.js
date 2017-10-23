@@ -11,7 +11,8 @@ export const deleteItem = (index) => () => {
 export const addItem = () => {
     let todos = store.getState().todos;
     store.setState({
-        todos: [ ...todos, store.getState().text]
+        todos: [ ...todos, store.getState().text],
+        text: ""
     });
 };
 
