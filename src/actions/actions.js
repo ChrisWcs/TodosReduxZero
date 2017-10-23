@@ -23,3 +23,9 @@ export const changeText = (event) => {
         text:  value
     });
 };
+
+export const clearTodos = () => {
+    store.setState({
+        todos: []
+    });
+};

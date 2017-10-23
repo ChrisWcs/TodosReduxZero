@@ -1,5 +1,6 @@
 import React from 'react';
-import { addItem, changeText} from '../actions/actions';
+import PropTypes from 'prop-types';
+import { addItem, changeText, clearTodos} from '../actions/actions';
 
 const style = {
     button: {
@@ -8,7 +9,8 @@ const style = {
         fontFamily: "Arial",
         border: "none",
         fontSize: "25px",
-        cursor: "pointer"
+        cursor: "pointer",
+        marginLeft: "10px",
     },
     input: {
         color: "black",
@@ -17,15 +19,19 @@ const style = {
         fontSize: "25px",
         cursor: "pointer",
         letterSpacing: "1px",
-        marginRight: "10px"
     }
 };
 
 const Input = ({ value }) => (
     <div>
         <input style={style.input} text="type" onChange={changeText} value={value}/>
-        <button style={style.button} onClick={addItem}>enter</button>
+        <button style={style.button} onClick={addItem}>Enter</button>
+        <button style={style.button} onClick={clearTodos}>Clear All</button>
     </div>
 );
+
+Input.propTypes = {
+    value: PropTypes.string
+};
 
 export default Input;
